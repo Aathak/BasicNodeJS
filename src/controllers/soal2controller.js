@@ -6,11 +6,11 @@ exports.celcius = (req, res) => {
     let kelvin = celcius + 273;
 
     let response = {
-        celcius : celcius,
-        result : {
-            fahrenheit: fahrenheit,
-            reamur: reamur,
-            kelvin: kelvin
+        "celcius" : celcius,
+        "result" : {
+            "fahrenheit": fahrenheit,
+            "reamur": reamur,
+            "kelvin": kelvin
         }
     };
 
@@ -19,18 +19,18 @@ exports.celcius = (req, res) => {
 };
 
 exports.reamur = (req, res) => {
-    let reamur = Number(req.body.celcius);
+    let reamur = Number(req.body.reamur);
 
-    let fahrenheit = reamur * 9/4 + 32;
-    let celcius = reamur * 5/4;
-    let kelvin = 9/4 * reamur + 273;
+    let celcius = reamur * 5/4
+    let fahrenheit = (reamur * 9/4) + 32
+    let kelvin = (9/4 * reamur) + 273
 
     let response = {
-        reamur : reamur,
-        result : {
-            fahrenheit: fahrenheit,
-            celcius: celcius,
-            kelvin: kelvin
+        "reamur" : reamur,
+        "result" : {
+            "fahrenheit": fahrenheit,
+            "celcius": celcius,
+            "kelvin": kelvin
         }
     };
 
@@ -39,17 +39,18 @@ exports.reamur = (req, res) => {
 };
 
 exports.kelvin = (req, res) => {
-    let kelvin = Number(req.body.celcius);
+    let kelvin = Number(req.body.kelvin);
 
-    let reamur = (reamur - 273) * 4/5;
+    let reamur = (kelvin - 273) * 4/5;
     let celcius = kelvin - 273;
+    let fahrenheit = (kelvin -273) * 9/5 + 32
 
     let response = {
-        kelvin : kelvin,
-        result : {
-            fahrenheit: fahrenheit,
-            reamur: reamur,
-            celcius: celcius
+        "kelvin" : kelvin,
+        "result" : {
+            "fahrenheit": fahrenheit,
+            "reamur": reamur,
+            "celcius": celcius
         }
     };
 
@@ -58,16 +59,16 @@ exports.kelvin = (req, res) => {
 };
 
 exports.fahrenheit = (req, res) => {
-    let fahrenheit = Number(req.body.celcius);
+    let fahrenheit = Number(req.body.fahrenheit);
 
     let celcius = (fahrenheit - 32) * 5/9;
     let reamur = (fahrenheit - 32) * 4/9;
 
     let response = {
-        fahrenheit : fahrenheit,
-        result : {
-            celcius: celcius,
-            reamur: reamur
+        "fahrenheit" : fahrenheit,
+        "result" : {
+            "celcius": celcius,
+            "reamur": reamur
         }
     };
 

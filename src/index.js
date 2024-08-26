@@ -15,11 +15,12 @@ const soal1 = require('./routers/soal1router')
 const soal2 = require('./routers/soal2router')
 const soal4 = require('./routers/soal4router')
 
-// implementasi routers
+// implementasi routers & basic router. Ditulis sebelum end point.
+// . dipakai untuk memanggil file lain. Tidak ada titik karena ia membuat url, bukan memanggil sesuatu.
 app.use('/praktikum', praktikum)
 app.use('/soal1', soal1)
 app.use('/soal2', soal2)
-app.use('/soal4', soal4)
+app.use('/soal4', soal4) //basic endpoint
 
 app.get("/test", (req,res) => {
     let response = {
